@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { Suspense, lazy } from 'react'
+import { Analytics } from '@vercel/analytics/react'
 import { AuthProvider } from './hooks/useAuth'
 import { ProtectedRoute } from './components/shared/ProtectedRoute'
 import { LoadingSpinner } from './components/shared/LoadingSpinner'
@@ -63,6 +64,7 @@ export default function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
+        <Analytics />
       </AuthProvider>
     </BrowserRouter>
   )
